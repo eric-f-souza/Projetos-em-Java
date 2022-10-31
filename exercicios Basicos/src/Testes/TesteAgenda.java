@@ -8,13 +8,13 @@ public class TesteAgenda {
 
         Agenda agenda = new Agenda();
 
-        agenda.addContato("Descoladao da quebrada","descoladao@hotmail.com");
-        agenda.addContato("Rei do Passinho", "rei@hotmail.com");
+        agenda.addContato("nome um","descoladao@hotmail.com");
+        agenda.addContato("nome dois", "rei@hotmail.com");
 
 
-       System.out.println(agenda.buscaContato("Rei do Passinho"));
-       System.out.println(agenda.deletarContato("Rei do Passinho"));
-       System.out.println(agenda.buscaContato("Rei do Passinho"));
+       System.out.println(agenda.buscaContato("nome um"));
+       System.out.println(agenda.deletarContato("nome um"));
+       System.out.println(agenda.buscaContato("nome dois"));
 
 
     }
