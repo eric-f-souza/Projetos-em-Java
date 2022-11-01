@@ -8,8 +8,8 @@ public class TesteAgenda {
 
         Agenda agenda = new Agenda();
 
-        agenda.addContato("nome um","descoladao@hotmail.com");
-        agenda.addContato("nome dois", "rei@hotmail.com");
+        agenda.addContato("nome um","nomeum@hotmail.com");
+        agenda.addContato("nome dois", "nomedois@hotmail.com");
 
 
        System.out.println(agenda.buscaContato("nome um"));
