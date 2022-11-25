@@ -1,0 +1,4 @@
+Notepad++ v8.4.4 crash/regression-fixes and new enhancement:
+
+
+BURI BURI3
