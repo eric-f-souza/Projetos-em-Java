@@ -29,13 +29,10 @@ public class DAO {
 	
 	// Teste
 	
-	public void testeConexao() {
-		try {
-			Connection con = conexao();
-			System.out.println(con);
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		
-	}
+	/*
+	 * public void testeConexao() { try { Connection con = conexao();
+	 * System.out.println(con); } catch (Exception e) { System.out.println(e); }
+	 * 
+	 * }
+	 */
 }
