@@ -11,6 +11,34 @@ public class Contatos {
 	private String dataNascimento;
 	private String grauParentesco;
 	
+	
+	
+	public Contatos(Long id, String nome, String sobrenome, String dataNascimento, String telefone01, String telefone02, String telefone03,
+			 String grauParentesco) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.telefone01 = telefone01;
+		this.telefone02 = telefone02;
+		this.telefone03 = telefone03;
+		this.dataNascimento = dataNascimento;
+		this.grauParentesco = grauParentesco;
+	}
+
+	public Contatos(String nome, String sobrenome, String dataNascimento, String telefone01, String telefone02, String telefone03,
+			 String grauParentesco) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.telefone01 = telefone01;
+		this.telefone02 = telefone02;
+		this.telefone03 = telefone03;
+		this.dataNascimento = dataNascimento;
+		this.grauParentesco = grauParentesco;
+	}
+
 	public String getSobrenome() {
 		return sobrenome;
 	}
@@ -39,36 +67,7 @@ public class Contatos {
 	
 	}
 	
-	public Contatos(Long id, String nome, String sobrenome, String email, String telefone01) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.dataNascimento = email;
-		this.telefone01 = telefone01;
-		
-	}
 	
-	public Contatos(Long id, String nome, String sobrenome, String email, String telefone01, String telefone02) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.dataNascimento = email;
-		this.telefone01 = telefone01;
-		this.telefone02 = telefone02;
-	}
-	
-	public Contatos(Long id, String nome, String sobrenome, String email, String telefone01, String telefone02, String telefone03) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.dataNascimento = email;
-		this.telefone01 = telefone01;
-		this.telefone02 = telefone02;
-		this.telefone03 = telefone03;
-	}
 	
 	
 	public Long getId() {
@@ -101,11 +100,8 @@ public class Contatos {
 	public void setTelefone03(String telefone03) {
 		this.telefone03 = telefone03;
 	}
-	public String getEmail() {
-		return dataNascimento;
-	}
-	public void setEmail(String email) {
-		this.dataNascimento = email;
-	}
 	
+	public String toString(){
+		return String.format("Nome: %s , Sobrenome: %s Data nascimento: %s, ", nome, sobrenome, dataNascimento);
+	}
 }

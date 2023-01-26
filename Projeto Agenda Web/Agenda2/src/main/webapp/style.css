@@ -18,4 +18,40 @@ h1{
 	font-size: 1.2em;
 	font-weight: 700;
 	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	color: #000000;
+	margin-bottom: 10px;
+}
+
+.tipoTexto1{
+	width: 350px;
+	padding: 5px;
+	margin-bottom: 2px;
+	border: 1px solid #66bbff;
+	border-radius: 5px;
+}
+
+.tipoTexto2{
+	padding: 5px;
+	margin-bottom: 2px;
+	border: 1px solid #66bbff;
+	border-radius: 5px;
+}
+
+#tabelaContatos{
+	margin-top: 30px;
+	border-collapse: collapse;
+}
+
+#tabelaContatos th{
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+	background-color: #66bbff; 
+}
+
+#tabelaContatos td{
+	border: 1px solid #ddd;
+	padding: 10px;
 }
