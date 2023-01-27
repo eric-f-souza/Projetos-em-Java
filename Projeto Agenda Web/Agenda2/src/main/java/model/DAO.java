@@ -85,12 +85,40 @@ public class DAO {
 	            rs.close();		           
 
 			} catch (SQLException ex) {
-				System.out.println(ex);
-				System.out.println("erro na lista");
+				System.out.println(ex);;
 				return null;
 			}
 			return listaContatos;
 	     }
+		
+		public void selecionarContatos(Contatos contato) {
+			String sql = "SELECT * FROM contatos where id = ?";
+			
+			try {
+				Connection con = conexao();
+				PreparedStatement stmt = con.prepareStatement(sql);
+				stmt.setLong(1, contato.getId());
+				ResultSet rs = stmt.executeQuery();  
+				while(rs.next()){
+					contato.setId(rs.getLong(1));
+					contato.setNome(rs.getString(2));
+					contato.setSobrenome(rs.getString(3));
+					contato.setDataNascimento(rs.getString(4));
+					contato.setTelefone01(rs.getString(5));
+					contato.setTelefone02(rs.getString(6));
+					contato.setTelefone03(rs.getString(7));
+					contato.setGrauParentesco(rs.getString(8));
+				}
+				stmt.close();
+				rs.close();
+	            con.close();
+	           	           
+			} catch (SQLException ex) {
+				System.out.println(ex);
+				
+			}
+			
+		}
 	
 	}
 	

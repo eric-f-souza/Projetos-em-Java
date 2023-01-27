@@ -80,7 +80,24 @@ public class Controller extends HttpServlet {
 			throws ServletException, IOException {
 			//recebe o id enviado pelo <td><a href="select?id=<%=listaContatos.get(i).getId() %>" class="botao">Editar</a>
 			String id = request.getParameter("id");
+			
+			System.out.println(id);
+			
 			contato.setId(Long.parseLong(id));
-		
+			
+			dao.selecionarContatos(contato);
+			
+			//setar atribultos web
+			request.setAttribute("id", contato.getId());
+			request.setAttribute("nome", contato.getNome());
+			request.setAttribute("sobrenome", contato.getSobrenome());
+			request.setAttribute("dataNascimento", contato.getDataNascimento());
+			request.setAttribute("telefone01", contato.getTelefone01());
+			request.setAttribute("telefone03", contato.getTelefone02());
+			request.setAttribute("telefone03", contato.getTelefone02());
+			request.setAttribute("parentesco", contato.getGrauParentesco());
+			//Enviar para o arquivo
+			RequestDispatcher rd = request.getRequestDispatcher("agenda.jsp");//colocar nome do arquivo para enviar os dados
+			rd.forward(request, response);
 	}
 }
