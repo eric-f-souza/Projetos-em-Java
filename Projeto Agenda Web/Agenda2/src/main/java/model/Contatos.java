@@ -29,7 +29,6 @@ public class Contatos {
 	public Contatos(String nome, String sobrenome, String dataNascimento, String telefone01, String telefone02, String telefone03,
 			 String grauParentesco) {
 		super();
-		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone01 = telefone01;
@@ -102,6 +101,6 @@ public class Contatos {
 	}
 	
 	public String toString(){
-		return String.format("Nome: %s , Sobrenome: %s Data nascimento: %s, ", nome, sobrenome, dataNascimento);
+		return String.format("Nome: %s , Sobrenome: %s Data nascimento: %s, Telefone: %s", nome, sobrenome, dataNascimento, telefone01);
 	}
 }

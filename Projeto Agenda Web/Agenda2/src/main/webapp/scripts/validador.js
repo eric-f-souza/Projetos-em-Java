@@ -29,7 +29,6 @@
 		 return false;
 	 }else{
 		 document.forms["frmNovoContato"].submit();
-	 }
-	 
-	 
+	 }	 
  }
+ 

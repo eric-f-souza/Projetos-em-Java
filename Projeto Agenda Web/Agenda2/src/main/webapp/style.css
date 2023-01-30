@@ -24,6 +24,50 @@ h1{
 	margin-bottom: 10px;
 }
 
+.botaoAtt{
+	text-decoration: none;
+	background-color: #4682B4;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	color: #000000;
+	margin-bottom: 10px;
+}
+
+.botaoE{
+	text-decoration: none;
+	background-color: #4169E1;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1em;
+	font-weight: 700;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	color: #000000;
+	margin-bottom: 10px;
+	width:50;
+	height:10;
+}
+
+.botaoD{
+	text-decoration: none;
+	background-color: #d51213;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1em;
+	font-weight: 700;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	color: #000000;
+	margin-bottom: 10px;
+}
+
 .tipoTexto1{
 	width: 350px;
 	padding: 5px;
@@ -42,13 +86,14 @@ h1{
 #tabelaContatos{
 	margin-top: 30px;
 	border-collapse: collapse;
+	background-color: #87CEEB;
 }
 
 #tabelaContatos th{
 	border: 1px solid #ddd;
 	padding: 10px;
 	text-align: left;
-	background-color: #66bbff; 
+	background-color: #00008b; 
 }
 
 #tabelaContatos td{

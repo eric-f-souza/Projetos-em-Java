@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h1>Editar Contato</h1>
-	<form name="frmNovoContato" action="">
+	<form name="frmNovoContato" action="update">
 		<table>
 			<tr>
 				<td><input type="text" name="id" id="tipoTexto3" readonly value="<%out.print(request.getAttribute("id")); %>"></td>
@@ -22,7 +22,7 @@
 				<td><input type="text" name="sobrenome" class="tipoTexto1" value="<%out.print(request.getAttribute("sobrenome")); %>"></td>
 			</tr>
 			<tr>
-				<td><input type="date" name="dataNascimento" class="tipoTexto2" value="<%out.print(request.getAttribute("dataNescimento")); %>"></td>
+				<td><input type="date" name="dataNascimento" class="tipoTexto2" value="<%out.print(request.getAttribute("dataNascimento")); %>"></td>
 			</tr>
 			<tr>
 				<td><input type="text" name="telefone01" class="tipoTexto2" value="<%out.print(request.getAttribute("telefone01")); %>"></td>
@@ -37,7 +37,7 @@
 				<td><input type="text" name="parentesco" class="tipoTexto2" value="<%out.print(request.getAttribute("parentesco")); %>"></td>
 			</tr>
 		</table>
-		<input class="botao" type="button" value="Adicionar Contato"
+		<input class="botao" type="button" value="Editar Contato"
 			onclick="validar()">
 	</form>
 	<script src="scripts/validador.js"></script>
