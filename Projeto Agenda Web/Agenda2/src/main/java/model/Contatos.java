@@ -81,17 +81,26 @@ public class Contatos {
 	public String getTelefone01() { 
 		return telefone01;
 	}
+	public String getTelefone01f() { 
+		return formatarNumeroGet(telefone01);
+	}
 	public void setTelefone01(String telefone01) {
 		this.telefone01 = formatarNumero(telefone01);
 	}
 	public String getTelefone02() {
 		return telefone02;
 	}
+	public String getTelefone02f() {
+		return formatarNumeroGet(telefone02);
+	}
 	public void setTelefone02(String telefone02) {
 		this.telefone02 = formatarNumero(telefone02);
 	}
 	public String getTelefone03() {
 		return telefone03;
+	}
+	public String getTelefone03f() {
+		return formatarNumeroGet(telefone03);
 	}
 	public void setTelefone03(String telefone03) {
 		this.telefone03 = formatarNumero(telefone03);
@@ -104,4 +113,14 @@ public class Contatos {
 	private String formatarNumero(String numero) {
 		return numero.replaceFirst("(\\d{2})(\\d{5})(\\d+)", "($1)$2-$3");
 	}
+	
+	private String formatarNumeroGet(String numero){
+		if(numero != null) {
+			String numeroA = numero.replaceAll("\\(", "");
+		    String numeroB = numeroA.replaceAll("\\)", "");
+		    return numeroB.replaceAll("-", "");
+		}
+		return numero;
+	}
+	
 }

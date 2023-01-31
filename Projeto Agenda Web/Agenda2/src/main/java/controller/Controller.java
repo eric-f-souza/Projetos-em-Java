@@ -110,9 +110,9 @@ public class Controller extends HttpServlet {
 		request.setAttribute("nome", contato.getNome());
 		request.setAttribute("sobrenome", contato.getSobrenome());
 		request.setAttribute("dataNascimento", contato.getDataNascimento());
-		request.setAttribute("telefone01", contato.getTelefone01());
-		request.setAttribute("telefone02", contato.getTelefone02());
-		request.setAttribute("telefone03", contato.getTelefone03());
+		request.setAttribute("telefone01", contato.getTelefone01f());
+		request.setAttribute("telefone02", contato.getTelefone02f());
+		request.setAttribute("telefone03", contato.getTelefone03f());
 		request.setAttribute("parentesco", contato.getGrauParentesco());
 	
 		

@@ -1,7 +1,13 @@
 @charset "utf-8";
 
+header{
+	background: #d4f0ff;
+	padding: 0px;
+	margin: 0px;
+}
 
 body{
+	background: #d4f0ff;
 	font-size: 1em;
 	font-weight: 400;
 }
@@ -22,6 +28,7 @@ h1{
 	cursor: pointer;
 	color: #000000;
 	margin-bottom: 10px;
+	margin-left: 240px;
 }
 
 .botaoAtt{
@@ -68,6 +75,19 @@ h1{
 	margin-bottom: 10px;
 }
 
+.botaoAC{
+	text-decoration: none;
+	background-color: #66bbff;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	color: #000000;
+	margin-bottom: 10px;
+}
 .tipoTexto1{
 	width: 350px;
 	padding: 5px;
@@ -92,6 +112,8 @@ h1{
 }
 
 #tabelaContatos{
+	margin-left: auto;
+    margin-right: auto;
 	margin-top: 30px;
 	border-collapse: collapse;
 	background-color: #87CEEB;
@@ -101,7 +123,7 @@ h1{
 	border: 1px solid #ddd;
 	padding: 10px;
 	text-align: left;
-	background-color: #00008b; 
+	background-color: #5c00f7; 
 }
 
 #tabelaContatos td{

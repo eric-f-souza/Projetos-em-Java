@@ -19,7 +19,7 @@ public class ValidadorContatos {
 			return 1;
 		}else if(sobrenome.length() < 1){
 			return 2;
-		}else if(contato.getTelefone01() == null || contato.getTelefone01().length() < 11){
+		}else if(contato.getTelefone01() == null || contato.getTelefone01().length() < 10){
 			return 3;
 		}
 		return 4;

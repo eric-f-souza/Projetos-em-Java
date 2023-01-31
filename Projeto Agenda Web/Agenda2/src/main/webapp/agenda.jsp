@@ -25,9 +25,11 @@ ArrayList<Contatos> listaContatos = (ArrayList<Contatos>) request.getAttribute("
 			}		
 		}
 	</script>
-	<a href="novoContato.html" class="botao">Novo Contato</a>
-	<a href="main" class="botaoAtt">Atualizar Contatos</a>
-	<table id="tabelaContatos">
+	<header>
+		<a href="novoContato.html" class="botao">Novo Contato</a>
+		<a href="main" class="botaoAtt">Atualizar Contatos</a>
+	</header>
+		<table id="tabelaContatos">
 		<thead>
 			<tr>
 				<th>ID</th>

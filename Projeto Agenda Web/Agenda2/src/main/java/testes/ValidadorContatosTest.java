@@ -98,7 +98,6 @@ class ValidadorContatosTest {
 		
 		contato.setNome(nome);
 		contato.setSobrenome(sobrenome);
-		//contato.setTelefone01(telefone01);
 		contato.setTelefone02(telefone02);
 		contato.setTelefone03(telefone03);
 		contato.setDataNascimento(dataNascimento);
@@ -108,11 +107,17 @@ class ValidadorContatosTest {
 		
 		Assertions.assertEquals(intRetorno, 3);
 		
-		contato.setTelefone01("99999999");
+		contato.setTelefone01("999999");
 		
 		intRetorno = validador.validarIntegridadeContato(contato);
 		
 		Assertions.assertEquals(intRetorno, 3);
+		
+		contato.setTelefone01("999999999999");
+		
+		intRetorno = validador.validarIntegridadeContato(contato);
+		
+		Assertions.assertEquals(intRetorno, 4);
 			
 	}
 
