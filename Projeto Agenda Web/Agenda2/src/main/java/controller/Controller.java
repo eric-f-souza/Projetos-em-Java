@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import auxiliar.MensagensAlerta;
+import auxiliar.ValidadorContatos;
 import model.Contatos;
 import model.DAO;
 
@@ -17,8 +19,10 @@ import model.DAO;
 @WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update", "/delete" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	DAO dao = new DAO();
 	Contatos contato = new Contatos();
+	MensagensAlerta retornoMensagem = new MensagensAlerta();
+	ValidadorContatos validarContato;
+	DAO dao = new DAO();
 	String msg;
 	
 	public Controller() {
@@ -78,15 +82,16 @@ public class Controller extends HttpServlet {
 
 		Contatos contato = new Contatos(nome, sobrenome, dataNascimento, telefone01, telefone02, telefone03, parentesco);
 		
-		if(dao.add(contato)) {
-			msg = "Cliente cadastrado!";
+		int validador = new ValidadorContatos().validarIntegridadeContato(contato);
+		
+		if(validador == 4){
+			msg = retornoMensagem.mensagemNovoContato(dao.add(contato));
 		}else {
-			msg = "Cliente não cadastrado! Tente novamente";
+			msg = retornoMensagem.erroValidador(validador);
 		}
 		
-		response.sendRedirect("main");
 
-		
+		response.sendRedirect("main");
 		
 	}
 
@@ -115,6 +120,7 @@ public class Controller extends HttpServlet {
 		rd.forward(request, response);
 	}
 
+	
 	protected void editarContato(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		contato.setId(Long.parseLong(request.getParameter("id")));
@@ -126,10 +132,13 @@ public class Controller extends HttpServlet {
 		contato.setTelefone03(request.getParameter("telefone03"));
 		contato.setGrauParentesco(request.getParameter("parentesco"));
 		
-		if(dao.editarContato(contato)){
-			msg = "Cliente atualizado!";
+		int validador = new ValidadorContatos().validarIntegridadeContato(contato);
+		
+		if(validador == 4){
+			msg = retornoMensagem.mensagemContatoEditado(dao.editarContato(contato));
+			
 		}else {
-			msg = "Alterações não foram salvas! Tente novamente";
+			msg = retornoMensagem.erroValidador(validador);
 		}
 
 		response.sendRedirect("main");
@@ -141,11 +150,7 @@ public class Controller extends HttpServlet {
 		
 		contato.setId(Long.parseLong(request.getParameter("id")));
 		
-		if(dao.deletarContato(contato)){
-			msg = "Cliente deletado!";
-		}else {
-			msg = "Alterações não foi deletado! Tente novamente";
-		}
+		msg = retornoMensagem.mensagemContatoDeletado(dao.deletarContato(contato));
 		
 		response.sendRedirect("main");
 		
