@@ -34,7 +34,7 @@
 				<td><input type="text" name="telefone03" class="tipoTexto2" value="<%out.print(request.getAttribute("telefone03")); %>" placeholder="Telefone adicional, somente numeoros" ></td>
 			</tr>
 			<tr>
-				<td><input type="text" name="parentesco" class="tipoTexto2" value="<%out.print(request.getAttribute("parentesco")); %>"></td>
+				<td><input type="text" name="parentesco" class="tipoTexto2" value="<%out.print(request.getAttribute("parentesco")); %>" placeholder="Grau Parentesco" ></td>
 			</tr>
 		</table>
 		<input class="botao" type="button" value="Editar Contato"
