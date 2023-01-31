@@ -79,19 +79,22 @@ public class Contatos {
 		this.nome = nome;
 	}
 	public String getTelefone01() { 
-		return telefone01;
+		String telefone01F = telefone01.replaceAll("-","");
+		return telefone01F.replaceAll("(","");
 	}
 	public void setTelefone01(String telefone01) {
 		this.telefone01 = formatarNumero(telefone01);
 	}
 	public String getTelefone02() {
-		return telefone02;
+		String telefone02F = telefone02.replaceAll("-","");
+		return telefone02F.replaceAll("(","");
 	}
 	public void setTelefone02(String telefone02) {
 		this.telefone02 = formatarNumero(telefone02);
 	}
 	public String getTelefone03() {
-		return telefone03;
+		String telefone03F = telefone03.replaceAll("-","");
+		return telefone03F.replaceAll("(","");
 	}
 	public void setTelefone03(String telefone03) {
 		this.telefone03 = formatarNumero(telefone03);
