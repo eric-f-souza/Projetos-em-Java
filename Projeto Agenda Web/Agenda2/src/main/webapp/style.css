@@ -1,7 +1,13 @@
 @charset "utf-8";
 
+header{
+	background: #d4f0ff;
+	padding: 0px;
+	margin: 0px;
+}
 
 body{
+	background: #d4f0ff;
 	font-size: 1em;
 	font-weight: 400;
 }
@@ -22,8 +28,66 @@ h1{
 	cursor: pointer;
 	color: #000000;
 	margin-bottom: 10px;
+	margin-left: 240px;
 }
 
+.botaoAtt{
+	text-decoration: none;
+	background-color: #4682B4;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	color: #000000;
+	margin-bottom: 10px;
+}
+
+.botaoE{
+	text-decoration: none;
+	background-color: #4169E1;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1em;
+	font-weight: 700;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	color: #000000;
+	margin-bottom: 10px;
+	width:50;
+	height:10;
+}
+
+.botaoD{
+	text-decoration: none;
+	background-color: #d51213;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1em;
+	font-weight: 700;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	color: #000000;
+	margin-bottom: 10px;
+}
+
+.botaoAC{
+	text-decoration: none;
+	background-color: #66bbff;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	color: #000000;
+	margin-bottom: 10px;
+}
 .tipoTexto1{
 	width: 350px;
 	padding: 5px;
@@ -33,6 +97,14 @@ h1{
 }
 
 .tipoTexto2{
+	width: 250px;
+	padding: 5px;
+	margin-bottom: 2px;
+	border: 1px solid #66bbff;
+	border-radius: 5px;
+}
+
+.tipoTexto3{
 	padding: 5px;
 	margin-bottom: 2px;
 	border: 1px solid #66bbff;
@@ -40,15 +112,18 @@ h1{
 }
 
 #tabelaContatos{
+	margin-left: auto;
+    margin-right: auto;
 	margin-top: 30px;
 	border-collapse: collapse;
+	background-color: #87CEEB;
 }
 
 #tabelaContatos th{
 	border: 1px solid #ddd;
 	padding: 10px;
 	text-align: left;
-	background-color: #66bbff; 
+	background-color: #5c00f7; 
 }
 
 #tabelaContatos td{

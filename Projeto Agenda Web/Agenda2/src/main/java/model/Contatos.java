@@ -29,12 +29,11 @@ public class Contatos {
 	public Contatos(String nome, String sobrenome, String dataNascimento, String telefone01, String telefone02, String telefone03,
 			 String grauParentesco) {
 		super();
-		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
-		this.telefone01 = telefone01;
-		this.telefone02 = telefone02;
-		this.telefone03 = telefone03;
+		this.telefone01 = formatarNumero(telefone01);
+		this.telefone02 = formatarNumero(telefone02);
+		this.telefone03 = formatarNumero(telefone03);
 		this.dataNascimento = dataNascimento;
 		this.grauParentesco = grauParentesco;
 	}
@@ -67,9 +66,6 @@ public class Contatos {
 	
 	}
 	
-	
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -82,26 +78,49 @@ public class Contatos {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getTelefone01() {
+	public String getTelefone01() { 
 		return telefone01;
 	}
+	public String getTelefone01f() { 
+		return formatarNumeroGet(telefone01);
+	}
 	public void setTelefone01(String telefone01) {
-		this.telefone01 = telefone01;
+		this.telefone01 = formatarNumero(telefone01);
 	}
 	public String getTelefone02() {
 		return telefone02;
 	}
+	public String getTelefone02f() {
+		return formatarNumeroGet(telefone02);
+	}
 	public void setTelefone02(String telefone02) {
-		this.telefone02 = telefone02;
+		this.telefone02 = formatarNumero(telefone02);
 	}
 	public String getTelefone03() {
 		return telefone03;
 	}
+	public String getTelefone03f() {
+		return formatarNumeroGet(telefone03);
+	}
 	public void setTelefone03(String telefone03) {
-		this.telefone03 = telefone03;
+		this.telefone03 = formatarNumero(telefone03);
 	}
 	
 	public String toString(){
-		return String.format("Nome: %s , Sobrenome: %s Data nascimento: %s, ", nome, sobrenome, dataNascimento);
+		return String.format("Nome: %s , Sobrenome: %s Data nascimento: %s, Telefone: %s", nome, sobrenome, dataNascimento, telefone01);
 	}
+	
+	private String formatarNumero(String numero) {
+		return numero.replaceFirst("(\\d{2})(\\d{5})(\\d+)", "($1)$2-$3");
+	}
+	
+	private String formatarNumeroGet(String numero){
+		if(numero != null) {
+			String numeroA = numero.replaceAll("\\(", "");
+		    String numeroB = numeroA.replaceAll("\\)", "");
+		    return numeroB.replaceAll("-", "");
+		}
+		return numero;
+	}
+	
 }
