@@ -2,6 +2,7 @@ package med.vol.api.domain.consulta;
 
 import jakarta.validation.ValidationException;
 import med.vol.api.domain.consulta.validacoes.ValidadorAgendamentoDeConsulta;
+import med.vol.api.domain.consulta.validacoes.ValidadorCancelamentoDeConsulta;
 import med.vol.api.domain.exepition.ValidacaoException;
 import med.vol.api.domain.medico.Medico;
 import med.vol.api.domain.medico.MedicoRepository;
@@ -25,6 +26,9 @@ public class AgendaDeConsultas {
 
     @Autowired
     private List<ValidadorAgendamentoDeConsulta> validadores;
+
+    @Autowired
+    private List<ValidadorCancelamentoDeConsulta> validadorCancelamento;
 
     public DadosDetalhamentoConsulta agendar(DadosParaAgendamento dados){
         if(!pacienteRepository.existsById(dados.idPaciente())){
@@ -57,5 +61,11 @@ public class AgendaDeConsultas {
 
         return medicoRepository.escolherMedicoLivre(dados.especialidade(), dados.dataHora());
 
+    }
+
+    public void excluir(DadosCancelamento dadosCancelamento) {
+        validadorCancelamento.forEach(v -> v.validar(dadosCancelamento));
+        
+        consultaRepository.deleteById(dadosCancelamento.idConsulta());
     }
 }

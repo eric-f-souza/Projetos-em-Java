@@ -2,17 +2,11 @@ package med.vol.api.controller;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
-import med.vol.api.domain.consulta.AgendaDeConsultas;
-import med.vol.api.domain.consulta.Consulta;
-import med.vol.api.domain.consulta.DadosDetalhamentoConsulta;
-import med.vol.api.domain.consulta.DadosParaAgendamento;
+import med.vol.api.domain.consulta.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("consultas")
@@ -28,5 +22,16 @@ public class ConsultaController {
         var dto = agenda.agendar(dados);
 
         return ResponseEntity.ok(dto);
+    }
+
+    @DeleteMapping
+    @Transactional
+    public ResponseEntity deletar(@RequestBody @Valid DadosCancelamento dadosCancelamento){
+
+
+        agenda.excluir(dadosCancelamento);
+
+        return ResponseEntity.noContent().build();
+
     }
 }
